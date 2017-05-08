@@ -3,6 +3,7 @@
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import linkParams from './page/linkParams.vue';
 
 
 Vue.use(VueRouter);
@@ -14,6 +15,10 @@ const router = new VueRouter({
     return {x: 0, y: 0};
   },
   routes:[
-
+    {
+      path: '/linkParams/:name',
+      component:linkParams
+    }
   ]
 });
+export default router;

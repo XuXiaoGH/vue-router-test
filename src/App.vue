@@ -2,6 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <hello></hello>
+    <router-link to="/linkParams/xuxiao">链接传参数</router-link>
+    <router-view></router-view>
+
   </div>
 </template>
 
