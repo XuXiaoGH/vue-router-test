@@ -8,8 +8,9 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  router:router,
-  el: '#app',
-  template: '<App/>',
-  components: { App }
-})
+  router: router,
+  render: h => h(App),
+  data: {
+    eventHub: new Vue()
+  }
+}).$mount('#app');

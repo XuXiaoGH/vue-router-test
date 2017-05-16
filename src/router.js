@@ -17,7 +17,31 @@ const router = new VueRouter({
   routes:[
     {
       path: '/linkParams/:name',
+      name: 'linkParams',
       component:linkParams
+    },
+    {
+      path: '/linkParamsQuestion',
+      name: 'xxx',
+      component: resolve => require(['./page/linkParamsQuestion.vue'], resolve)
+    },
+    {
+      path: '/nestRouter',
+      component: resolve => require(['./page/nestRouter.vue'], resolve),
+      children: [
+        {
+          path:'child',
+          component:resolve => require(['./page/nestRouterChild.vue'], resolve),
+        }
+      ]
+    },
+    {
+      path: '/manager',
+      components: {
+        a: resolve => require(['./page/slider.vue'], resolve),
+        b: resolve => require(['./page/main.vue'], resolve),
+      }
+
     }
   ]
 });

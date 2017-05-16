@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-     <p>我拿到了你的名字噢，你是{{name}}</p>
+    <p>我拿到了你的年龄噢，你是{{age}}</p>
   </div>
 </template>
 
@@ -14,16 +14,12 @@
             age: ''
         }
     },
-    watch: {
-      '$route' (to, from) {
-        // 对路由变化作出响应...这个方法，只在页面复用的时候才生效
-        console.log(to);
-        console.log(from);
-      }
+    components: {
+
     },
     mounted(){
-        this.name = this.$route.params.name; //通过router映射的取参数方式
-        console.log(this.$route.params);
+        this.age = this.$route.query.age; // 对于链接里?号的方式，vue会把这些参数加在 $route.query里
+        console.log(this.$route.query);
     }
   }
 </script>

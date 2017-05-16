@@ -1,29 +1,23 @@
 <template>
   <div id="app">
-     <p>我拿到了你的名字噢，你是{{name}}</p>
+    <p>我是嵌套路由页面</p>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 
   export default {
-    name: 'linkParams',
+    name: 'nestRouter',
     data(){
         return{
             name: '',
-            age: ''
         }
     },
-    watch: {
-      '$route' (to, from) {
-        // 对路由变化作出响应...这个方法，只在页面复用的时候才生效
-        console.log(to);
-        console.log(from);
-      }
+    components: {
+
     },
     mounted(){
-        this.name = this.$route.params.name; //通过router映射的取参数方式
-        console.log(this.$route.params);
     }
   }
 </script>
